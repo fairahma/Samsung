@@ -17,7 +17,7 @@ This directory is a TizenBrew application module: `packageType: app`, `appPath: 
 
 The module service runs **on the TV**, bound only to `127.0.0.1:39971`, and transports catalog HTML for the two supported sites. It preserves HTTPS certificate verification, limits redirects and response size, and rejects other destinations. This solves the browser-origin restriction of modules served from TizenBrew's local HTTP server. No laptop relay is required after installation.
 
-The ZIP is a source/module package, not a directly installable TizenBrew ZIP importer file. The GitHub module is hosted in `fairahma/Samsung`; install it through TizenBrew's GitHub module manager.
+The module is published in `fairahma/Samsung` and was installed and launched through TizenBrew on the target S95B. Open **TizenBrew → Cinema TV**. The installed build is pinned to commit `9e3804c1118373bc3e02ae7affef77be85a3b456`. The ZIP remains a source/module package, not a direct ZIP installer.
 
 ## Standalone widget route
 
@@ -27,7 +27,7 @@ The standalone widget uses direct application network access and does not depend
 
 ## Validation
 
-The packaged-file preview was run on a Samsung S95B QN55S95BAFXZC reporting Tizen 6.5. Live catalog loading, multiple pages, search, directional-key event focus and detail navigation were verified. See `TESTING.md` for exact scope and remaining installation/playback checks.
+The packaged-file preview was run on a Samsung S95B QN55S95BAFXZC reporting Tizen 6.5. Live catalog loading, multiple pages, search, directional-key event focus and detail navigation were verified. The installed module's TV-local transport returned HTTP 200 for both sources and loaded its catalog from the TizenBrew HTTP route. See `TESTING.md` for exact scope and remaining playback checks.
 
 The image supplied alongside the build is a desktop rendering of the same TV layout, not a TV screen capture.
 
