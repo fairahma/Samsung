@@ -18,4 +18,4 @@ with zipfile.ZipFile(out / 'Cinema-TV-S95B-TizenBrew.zip', 'w', zipfile.ZIP_DEFL
 with zipfile.ZipFile(out / 'Cinema-TV-S95B-UNSIGNED.wgt', 'w', zipfile.ZIP_DEFLATED) as archive:
     for file in [root / 'config.xml', root / 'icon.png'] + app_files:
         archive.write(file, file.relative_to(root).as_posix())
-print('Built TizenBrew module ZIP and UNSIGNED Samsung widget. Neither is installed or published.')
+print('Built TizenBrew module ZIP and UNSIGNED Samsung widget. This command packages files only.')
