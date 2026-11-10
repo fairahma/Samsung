@@ -4,7 +4,7 @@
 
 Model: QN55S95BAFXZC. The runtime independently reported Tizen 6.5.
 
-The existing TizenBrew debugger was used for a temporary app preview. No permanent application installation, public publication, firmware change or signing-certificate change was performed.
+The initial checks used a temporary packaged-file preview. After the user approved publication and installation, the app was published and installed through TizenBrew. No firmware or signing-certificate changes were performed.
 
 - TamilGun landing: 26 live titles, HTTP success.
 - TamilGun pagination: 49 distinct titles after three page requests, with a next-page URL retained.
@@ -22,8 +22,15 @@ TV screenshot capture did not return through this model's debugger. The companio
 
 TV-local transport helper tested on Windows Node: loopback binding, health response, module-origin CORS header, rejection of non-allowlisted hosts/protocols/credentials/ports, and HTTPS success for both public catalog roots. TLS verification remains enabled.
 
-## Remaining checks
+## Installed module verification
 
-- The permanent TizenBrew module must be published/installed before its Node service can be tested in the TV's actual service runtime. The packaged-file preview and service helper were tested separately.
+- Published module commit: `9e3804c1118373bc3e02ae7affef77be85a3b456`.
+- Cinema TV 1.0.0 found in a fresh TizenBrew module-list read after registration.
+- The TV-local service started successfully and returned its health response.
+- TV-local transport returned HTTP 200 for both catalog roots, with real catalog HTML.
+- The installed UI loaded from the TV-local `/module/` HTTP route, including CSS and scripts, and displayed 26 TamilGun titles and 24 TamilBlasters titles without a catalog error.
+- An embedded movie player was opened during use; successful video decoding was not established. No playback success is claimed.
+
+## Remaining checks
 - Standalone WGT signing is not complete; the supplied widget is unsigned.
 - Actual movie decoding, third-party player controls, embedded-player return-key handling and long-session playback have not been verified on the TV. Source discovery or an HTTP 200 response does not prove successful video playback.
